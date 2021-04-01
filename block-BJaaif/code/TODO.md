@@ -17,7 +17,7 @@ Inside `personStore` object, create a property `greet` where the value is a func
 
 #### Challenge 2/3
 
-Create a function `personFromPersonStore` that takes as input a `name` and an `age`. When called, the function will create person objects using the `Object.create` method on the `personStore` object. And return the object with age and name.
+Create a function `personFromPersonStore` that takes as input a `name` and an `age`. When called, the function will create person object using the `Object.create` method on the `personStore` object. And return the object with age and name.
 
 #### Challenge 3/3
 
