@@ -155,6 +155,24 @@ body {
 	justify-content: flex-start;
 	align-items: center;
 }
+.flex-10 {
+	flex: 0 1 10%;
+}
+.flex-15 {
+	flex: 0 1 15%;
+}
+.flex-25 {
+	flex: 0 1 25%;
+}
+.flex-30 {
+	flex: 0 1 30%;
+}
+.flex-40 {
+	flex: 0 1 40%;
+}
+.flex-50 {
+	flex: 0 1 50%;
+}
 .wrap {
 	flex-wrap: wrap;
 }
@@ -170,6 +188,10 @@ body {
 .header span {
 	color: skyblue;
 }
+
+.main {
+	padding: 2rem 0;
+}
 .main input {
 	display: block;
 	width: 100%;
@@ -183,6 +205,31 @@ body {
 	color: white;
 	font-size: 1.5rem;
 	cursor: pointer;
+}
+.main hr {
+	border: none;
+	border-top: 1px solid lightgray;
+	margin-bottom: 1.5rem;
+}
+.booklist li {
+	padding: 0.5rem;
+}
+.booklist .list-header span {
+	font-weight: bold;
+}
+.booklist .list-item {
+	background-color: rgb(238, 236, 236);
+	cursor: pointer;
+}
+.fa-trash {
+	color: red;
+	cursor: pointer;
+}
+.fa-trash:hover {
+	font-size: larger;
+}
+.booklist .read {
+	background-color: lightgreen;
 }
 
 /* styling main */
