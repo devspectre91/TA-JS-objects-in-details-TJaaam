@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>BookStore</title>
+		<link rel="stylesheet" href="../assets/styles.css" />
+		<script src="https://use.fontawesome.com/41be6dfa6e.js"></script>
+	</head>
+	<body>
+		<header class="header">
+			<h1><i class="fa fa-book" aria-hidden="true"></i> My <span>Book</span>List</h1>
+		</header>
+		<main class="main container">
+			<form>
+				<fieldset>
+					<label for="tname">Title</label>
+					<input type="text" id="tname" name="tname" />
+					<label for="aname">Author</label>
+					<input type="text" id="aname" name="aname" />
+					<label for="isbnNo">ISBN#</label>
+					<input type="text" id="isbnNo" name="isbnNo" />
+					<input class="btn-primary" type="submit" value="Add Book" />
+				</fieldset>
+			</form>
+			<hr />
+
+			<ul class="booklist">
+				<li class="list-header flex">
+					<span class="flex-30">Title</span>
+					<span class="flex-25">Author</span>
+					<span class="flex-40">ISBN#</span>
+					<span></span>
+				</li>
+			</ul>
+		</main>
+		<script src="./index.js"></script>
+	</body>
+</html>
