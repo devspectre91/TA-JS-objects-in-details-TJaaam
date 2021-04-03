@@ -219,7 +219,7 @@ body {
 }
 .booklist .list-item {
 	background-color: rgb(238, 236, 236);
-	cursor: pointer;
+	
 }
 .fa-trash {
 	color: red;
