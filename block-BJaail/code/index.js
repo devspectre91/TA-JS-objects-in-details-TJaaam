@@ -12,11 +12,16 @@ class BookList {
         return this.listOfBooks.length;
     }
     deleteBook(isbn) {
-        let index = this.listOfBooks.forEach((e, index) => {
+
+
+        let index = this.listOfBooks.forEach((e, i) => {
+
             if (e.isbn == isbn) {
-                return index;
+
+                return i;
             }
         })
+
         this.listOfBooks.splice(index, 1);
         this.createUI();
         return this.listOfBooks.length;
@@ -26,10 +31,20 @@ class BookList {
         document.getElementById("aname").value = "";
         document.getElementById("isbnNo").value = "";
 
-        this.root.innerHTML = "";
+        this.root.innerHTML = `<li class="list-header flex">
+        <span class="flex-30">Title</span>
+        <span class="flex-25">Author</span>
+        <span class="flex-40">ISBN#</span>
+        <span></span>
+    </li>`;
         this.listOfBooks.forEach(book => {
             let ui = book.createUI();
-            ui.querySelector("i").addEventListener("click", this.deleteBook.bind(this, book.isbn));
+
+            ui.querySelector("i").addEventListener("click", () => {
+
+
+                this.deleteBook(book.isbn)
+            });
 
             this.root.append(ui);
         });
@@ -45,15 +60,24 @@ class Book {
         this.isRead = false;
     }
 
-    changeStatus() {
+    changeStatus(e) {
         this.isRead = !this.isRead;
+        // myBookList.createUI();//how this Book class can access mybookList object??
+
+        e.target.parentElement.classList.toggle("read");
+        //  console.log(e.target.parentElement);
+        //this.createUI();
     }
 
     createUI() {
         let listItem = document.createElement("li");
         listItem.classList.add("flex", "list-item");
         listItem.style.borderBottom = "1px dotted black";
+        if (this.isRead) { listItem.classList.add("read") };
+        //  if(this.isRead){listItem.classList.toggle("read")};
+        //    console.log(listItem)
         let subItem1 = document.createElement("span");
+        listItem.addEventListener("click", (e) => { this.changeStatus(e) });
         subItem1.innerText = this.title;
         subItem1.classList.add("flex-30");
         let subItem2 = document.createElement("span");
@@ -68,7 +92,7 @@ class Book {
         deleteButton.classList.add("fa", "fa-trash");
         subItem4.append(deleteButton);
         deleteButton.setAttribute("aria-hidden", "true");
-        //deleteButton.addEventListener('click',handleDelete);
+
         listItem.append(subItem1, subItem2, subItem3, subItem4);
         return listItem;
     }
@@ -88,3 +112,14 @@ submit.addEventListener("click", (event) => {
     }
 
 });
+//Doubts:
+// what if i want click event listener on list item which contains sub elements
+// that have themselves click event defined.If i click on the sub element, 
+//which eventhandler will be called ?
+
+
+//Right way to change the state of individual book item
+//How to change the UI without using event.target or calling the creatUI function on mybooklist object
+
+//How does the even.target method works for chaging status of book read
+//but the UI remains unchanged if sone using this.createUI(), inside Book class
