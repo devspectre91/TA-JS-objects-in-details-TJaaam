@@ -136,6 +136,7 @@ table {
 
 body {
 	line-height: 1.5;
+	
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
 		"Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -176,33 +177,55 @@ h1 {
 
 .instructions {
 	position: relative;
-	max-width: 60%;
+	max-width: 70%;
 	top: 0;
-	margin: 0 auto;
-	padding: 3rem 1rem;
+	margin: 2rem auto;
+	background-color: rgb(255, 245, 255);
+	padding: 3rem 3rem;
+	border-radius: 1rem;
 }
 .instructions a {
-	text-decoration: none;
+	/* text-decoration: none;
 	padding: 0.5rem 1rem;
 	position: absolute;
 	right: 1rem;
 	display: block;
 	color: black;
 	font-weight: 600;
-	background-color: lightpink;
+	background-color: rgb(241, 129, 195);
 	border-radius: 1rem;
-	text-align: center;
+	text-align: center; */
+	border: 0;
+	text-decoration: none;
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
+	display: block;
+	background: #0087cc;
+	border-radius: 4px;
+	box-shadow: 0 5px 0 #006599;
+	color: #fff;
+	cursor: pointer;
+	font: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0.5rem 1rem;
+	transition: all .1s linear;
+}
+.instructions a:active{
+	box-shadow: 0 2px 0 #006599;
+	transform: translateY(3px);
 }
 .instructions span {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	text-decoration: underline;
 	font-weight: 500;
 }
 .instructions ol li {
 	text-align: justify;
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	margin: 1rem 0;
-	font-weight: 500;
+	
 }
 .instructions h4 {
 	font-size: 1.4rem;
@@ -240,7 +263,8 @@ h1 {
 }
 #question {
 	min-height: 20vh;
-	background-color: rgb(79, 181, 245);
+	background-color: rgb(152, 208, 243);
+
 	border-top-left-radius: 0rem;
 	border-top-right-radius: 1rem;
 	border-bottom-left-radius: 1rem;
@@ -261,6 +285,11 @@ h1 {
 	border-top-right-radius: 1rem;
 	border-bottom-left-radius: 1rem;
 	cursor: pointer;
+	
+}
+.question-container div:hover{
+	background-color:aliceblue;
+	box-shadow: 3px 2px 4px 1px rgba(0, 0, 0, 0.438);
 }
 #right-arrow,
 #left-arrow {
